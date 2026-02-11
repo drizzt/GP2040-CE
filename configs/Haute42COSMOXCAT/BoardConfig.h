@@ -77,6 +77,7 @@
 
 #define TURBO_ENABLED 1
 #define GPIO_PIN_14 GpioAction::BUTTON_PRESS_TURBO
+// #define TURBO_LED_PIN 15 XXX it's in default settings, but it doesn't seem to be used at all
 
 #define BOARD_LEDS_PIN 28
 #define LED_BRIGHTNESS_MAXIMUM 100
@@ -149,6 +150,9 @@
 
 // Keyboard Host enabled by default
 #define KEYBOARD_HOST_ENABLED 1
+
+// #define BOARD_LED_ENABLED 1  XXX it's in default settings, but it uses M4 as LED
+// #define BOARD_LED_TYPE ON_BOARD_LED_MODE_MODE_INDICATOR
 
 #define LIGHT_DATA_NAME_DEFAULT "Haute42|Cosmox C-AT"
 #define LIGHT_DATA_SIZE_DEFAULT 50 //number of sets in the below data
