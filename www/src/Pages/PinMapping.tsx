@@ -82,8 +82,8 @@ const options = Object.entries(BUTTON_ACTIONS)
 			type: buttonMask
 				? 'customButtonMask'
 				: dpadMask
-					? 'customDpadMask'
-					: 'action',
+				? 'customDpadMask'
+				: 'action',
 			customButtonMask: buttonMask?.value || 0,
 			customDpadMask: dpadMask?.value || 0,
 		};
@@ -122,7 +122,7 @@ const getMultiValue = (pinData: MaskPayload) => {
 						type === 'customButtonMask') ||
 					(pinData.customDpadMask & customDpadMask &&
 						type === 'customDpadMask'),
-			)
+		  )
 		: options.filter((option) => option.value === pinData.action);
 };
 
@@ -147,7 +147,7 @@ const ProfileLabel = memo(function ProfileLabel({
 	);
 
 	return (
-		<div>
+		<div className="pin-grid">
 			<Form.Label>{t('PinMapping:profile-label-title')}</Form.Label>
 			<Form.Control
 				type="text"
@@ -341,12 +341,10 @@ const PinSection = memo(function PinSection({
 				})}
 			>
 				<Form onSubmit={handleSubmit}>
-					<Row>
-						<Col md={7}>
-							<ProfileLabel profileIndex={profileIndex} />
-						</Col>
+					<div className="d-flex justify-content-between">
+						<ProfileLabel profileIndex={profileIndex} />
 						{profileIndex > 0 && (
-							<Col className='order-first order-md-last'>
+							<div className="d-flex">
 								<FormCheck
 									disabled={profileIndex === activeProfile}
 									size={3}
@@ -373,9 +371,9 @@ const PinSection = memo(function PinSection({
 										toggleProfileEnabled(profileIndex);
 									}}
 								/>
-							</Col>
+							</div>
 						)}
-					</Row>
+					</div>
 					<hr />
 
 					<PinSelectList profileIndex={profileIndex} />
