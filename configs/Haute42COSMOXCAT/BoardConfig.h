@@ -80,8 +80,6 @@
 
 #define BOARD_LEDS_PIN 28
 #define LED_BRIGHTNESS_MAXIMUM 100
-#define LEDS_BRIGHTNESS 200
-#define LED_BRIGHTNESS_STEPS 5
 #define LED_FORMAT LED_FORMAT_GRB
 #define LEDS_PER_PIXEL 1
 #define LEDS_BASE_ANIMATION_INDEX 1
@@ -151,6 +149,60 @@
 
 // Keyboard Host enabled by default
 #define KEYBOARD_HOST_ENABLED 1
+
+#define LIGHT_DATA_NAME_DEFAULT "Haute42|Cosmox C-AT"
+#define LIGHT_DATA_SIZE_DEFAULT 50 //number of sets in the below data
+#define LIGHT_DATA_DEFAULT \
+ 0, 1,  6,  4, 5, LightType::LightType_ActionButton, \
+ 1, 1,  8,  4, 3, LightType::LightType_ActionButton, \
+ 2, 1, 10,  5, 4, LightType::LightType_ActionButton, \
+ 3, 1, 10,  8, 2, LightType::LightType_ActionButton, \
+ 4, 1, 12,  4, 10, LightType::LightType_ActionButton, \
+ 5, 1, 14,  3, 11, LightType::LightType_ActionButton, \
+ 6, 1, 16,  3, 12, LightType::LightType_ActionButton, \
+ 7, 1, 18,  3, 13, LightType::LightType_ActionButton, \
+ 8, 1, 12,  6, 6, LightType::LightType_ActionButton, \
+ 9, 1, 14,  5, 7, LightType::LightType_ActionButton, \
+10, 1, 16,  5, 8, LightType::LightType_ActionButton, \
+11, 1, 18,  5, 9, LightType::LightType_ActionButton, \
+12, 1, 12,  8, 27, LightType::LightType_ActionButton, \
+13, 1,  8,  7, 18, LightType::LightType_ActionButton, \
+14, 1,  14, 7, 19, LightType::LightType_ActionButton, \
+15, 1,  4,  5, 26, LightType::LightType_ActionButton, \
+16, 1,  8,  2, 29, LightType::LightType_ActionButton, \
+17, 1, 12,  2, 25, LightType::LightType_ActionButton, \
+18, 1, 10,  0,  0, LightType::LightType_Case, \
+19, 1,  8,  0,  1, LightType::LightType_Case, \
+20, 1,  6,  0,  2, LightType::LightType_Case, \
+21, 1,  4,  0,  3, LightType::LightType_Case, \
+22, 1,  2,  0,  4, LightType::LightType_Case, \
+23, 1,  0,  0,  5, LightType::LightType_Case, \
+24, 1,  0,  2,  6, LightType::LightType_Case, \
+25, 1,  0,  4,  7, LightType::LightType_Case, \
+26, 1,  0,  6,  8, LightType::LightType_Case, \
+27, 1,  0,  8,  9, LightType::LightType_Case, \
+28, 1,  0, 10, 10, LightType::LightType_Case, \
+29, 1,  2, 10, 11, LightType::LightType_Case, \
+30, 1,  4, 10, 12, LightType::LightType_Case, \
+31, 1,  6, 10, 13, LightType::LightType_Case, \
+32, 1,  8, 10, 14, LightType::LightType_Case, \
+33, 1, 10, 10, 15, LightType::LightType_Case, \
+34, 1, 12, 10, 16, LightType::LightType_Case, \
+35, 1, 14, 10, 17, LightType::LightType_Case, \
+36, 1, 16, 10, 18, LightType::LightType_Case, \
+37, 1, 18, 10, 19, LightType::LightType_Case, \
+38, 1, 20, 10, 20, LightType::LightType_Case, \
+39, 1, 22, 10, 21, LightType::LightType_Case, \
+40, 1, 22,  8, 22, LightType::LightType_Case, \
+41, 1, 22,  6, 23, LightType::LightType_Case, \
+42, 1, 22,  4, 24, LightType::LightType_Case, \
+43, 1, 22,  2, 25, LightType::LightType_Case, \
+44, 1, 22,  0, 26, LightType::LightType_Case, \
+45, 1, 20,  0, 27, LightType::LightType_Case, \
+46, 1, 18,  0, 28, LightType::LightType_Case, \
+47, 1, 16,  0, 29, LightType::LightType_Case, \
+48, 1, 14,  0, 30, LightType::LightType_Case, \
+49, 1, 12,  0, 31, LightType::LightType_Case
 
 #define DEFAULT_SPLASH \
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, \
