@@ -63,7 +63,7 @@
 #endif
 
 #ifndef DISPLAY_SAVER_TIMEOUT
-#define DISPLAY_SAVER_TIMEOUT 0
+#define DISPLAY_SAVER_TIMEOUT 1
 #endif
 
 #ifndef BUTTON_LAYOUT
