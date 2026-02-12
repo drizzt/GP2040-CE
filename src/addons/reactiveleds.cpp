@@ -50,6 +50,7 @@ void ReactiveLEDAddon::process() {
 
     for (uint8_t led = 0; led < REACTIVE_LED_COUNT; led++) {
         if (isValidPin(ledPins[led].pinNumber) && ledPins[led].action != GpioAction::NONE) {
+            InputMode inputMode = gamepad->getOptions().inputMode;
             ledPins[led].currUpdate = currUpdate;
             switch (ledPins[led].action) {
                 case BUTTON_PRESS_UP: setLEDByMode(ledPins[led], gamepad->pressedDpad(GAMEPAD_MASK_UP)); break;
@@ -70,6 +71,11 @@ void ReactiveLEDAddon::process() {
                 case BUTTON_PRESS_A2: setLEDByMode(ledPins[led], gamepad->pressedButton(GAMEPAD_MASK_A2)); break;
                 case BUTTON_PRESS_L3: setLEDByMode(ledPins[led], gamepad->pressedButton(GAMEPAD_MASK_L3)); break;
                 case BUTTON_PRESS_R3: setLEDByMode(ledPins[led], gamepad->pressedButton(GAMEPAD_MASK_R3)); break;
+
+                // Yes, it sucks like Ilona Staller... But I don't want to learn React stuff...
+                case BUTTON_PRESS_E10: setLEDByMode(ledPins[led], inputMode == INPUT_MODE_GENERIC || inputMode == INPUT_MODE_PS3 || inputMode == INPUT_MODE_PS4 || inputMode == INPUT_MODE_PS5 || inputMode == INPUT_MODE_P5GENERAL); break;                                                // LED MODE BLUE
+                case BUTTON_PRESS_E11: setLEDByMode(ledPins[led], inputMode == INPUT_MODE_XINPUT || inputMode == INPUT_MODE_KEYBOARD || inputMode == INPUT_MODE_PS4 || inputMode == INPUT_MODE_PS5 || inputMode == INPUT_MODE_P5GENERAL); break;                                            // LED MODE GREEN
+                case BUTTON_PRESS_E12: setLEDByMode(ledPins[led], inputMode == INPUT_MODE_GENERIC || inputMode == INPUT_MODE_KEYBOARD || inputMode == INPUT_MODE_PS5 || inputMode == INPUT_MODE_P5GENERAL || inputMode == INPUT_MODE_SWITCH || inputMode == INPUT_MODE_SWITCH_PRO); break;  // LED MODE RED
                 default: break;
             }
         }
